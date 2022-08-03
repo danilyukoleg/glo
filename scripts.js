@@ -1,21 +1,19 @@
 "use strict";
 
-let title = prompt("Как называется ваш проект?");
-let screens = prompt("Какие типы экранов нужно разработать?");
-let screenPrice = +prompt("Сколько будет стоить данная работа?");
+let title = prompt("Как называется ваш проект?", "Типы данных");
+let screens = prompt("Какие типы экранов нужно разработать?", "Декстоп");
+let screenPrice = +prompt("Сколько будет стоить данная работа?", "20000");
 let rollback = 33;
 let adaptive = confirm("Нужен ли адаптив на сайте?");
 
-let service1 = prompt("Какой дополнительный тип услуги нужен?");
-let servicePrice1 = +prompt("Сколько это будет стоить?");
-let service2 = prompt("Какой дополнительный тип услуги нужен?");
-let servicePrice2 = +prompt("Сколько это будет стоить?");
+let service1 = prompt("Какой дополнительный тип услуги нужен?", "Форма");
+let servicePrice1 = +prompt("Сколько это будет стоить?", "2000");
+let service2 = prompt("Какой дополнительный тип услуги нужен?", "Клик");
+let servicePrice2 = +prompt("Сколько это будет стоить?", "50000");
 
 let fullPrice = screenPrice + servicePrice1 + servicePrice2;
 
 let servicePercentPrice = Math.ceil(fullPrice - rollback / 100);
-
-console.log(servicePercentPrice);
 
 if (fullPrice >= 30000) {
   console.log("Даем скидку в 10%");
@@ -38,3 +36,4 @@ console.log(
   `Стоимость разработки сайта ${fullPrice} рублей/ долларов/гривен/юани`
 );
 console.log(screens.toLowerCase().split(", "));
+console.log(servicePercentPrice);
