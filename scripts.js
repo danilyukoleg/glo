@@ -1,28 +1,28 @@
 "use strict";
 
-const title = prompt("Введите название Вашего проекта..."),
-  screens = prompt("Введите типы экранов для разработки"),
-  screenPrice = +prompt("Сколько будет стоить данная работа?"),
-  rollback = 50,
-  adaptive = confirm("Нужен ли адаптив на сайте?"),
-  service1 = prompt("Какой дополнительный тип услуги нужен?"),
-  servicePrice1 = +prompt("Сколько это будет стоить?"),
-  service2 = prompt("Какой дополнительный тип услуги нужен?"),
-  servicePrice2 = +prompt("Сколько это будет стоить?");
+let title = prompt("Введите название Вашего проекта...");
+let screens = prompt("Введите типы экранов для разработки");
+let screenPrice = +prompt("Сколько будет стоить данная работа?");
+let rollback = 50;
+let adaptive = confirm("Нужен ли адаптив на сайте?");
+let service1 = prompt("Какой дополнительный тип услуги нужен?");
+let servicePrice1 = +prompt("Сколько это будет стоить?");
+let service2 = prompt("Какой дополнительный тип услуги нужен?");
+let servicePrice2 = +prompt("Сколько это будет стоить?");
+
+let allServicePrices;
+let fullPrice;
+let servicePercentPrice;
 
 // 1
 const getAllServicePrices = function (price1, price2) {
   return price1 + price2;
 };
 
-let allServicePrices = getAllServicePrices(servicePrice1, servicePrice2);
-
 // 2
 function getFullPrice(screenPrice, allServicePrices) {
   return screenPrice + allServicePrices;
 }
-
-let fullPrice = getFullPrice(screenPrice, allServicePrices);
 
 // 3
 const getTitle = (title) => {
@@ -33,8 +33,6 @@ const getTitle = (title) => {
 const getServicePercentPrices = (fullPrice, rollback) => {
   return fullPrice - rollback;
 };
-
-let servicePercentPrice = getServicePercentPrices(fullPrice, rollback);
 
 const getRollbackMessage = (price) => {
   if (price >= 30000) {
@@ -57,7 +55,11 @@ showTypeOf(title);
 showTypeOf(screenPrice);
 showTypeOf(adaptive);
 
+getAllServicePrices(servicePrice1, servicePrice2);
+getFullPrice(screenPrice, allServicePrices);
+getServicePercentPrices(fullPrice, rollback);
+
 console.log(getTitle(title));
 console.log("screens: ", screens);
-console.log(getRollbackMessage(getFullPrice(screenPrice)));
+console.log(getRollbackMessage(fullPrice));
 console.log(servicePercentPrice);
