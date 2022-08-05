@@ -34,6 +34,7 @@ const asking = function () {
 
 const getAllServicePrices = function () {
   let sum = 0;
+  let price = 0;
 
   for (let i = 0; i < 2; i++) {
     if (i === 0) {
@@ -49,9 +50,10 @@ const getAllServicePrices = function () {
     while (!isNumber(sum)) {
       sum = prompt("Сколько это будет стоить?");
     }
+    price += Number(sum);
   }
 
-  return +sum;
+  return price;
 };
 
 const getFullPrice = function () {
