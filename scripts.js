@@ -51,11 +51,11 @@ const getAllServicePrices = function () {
     }
   }
 
-  return sum;
+  return +sum;
 };
 
 const getFullPrice = function () {
-  return Number(screenPrice) + Number(allServicePrices);
+  return +screenPrice + allServicePrices;
 };
 
 const getTitle = function () {
@@ -73,9 +73,9 @@ const showTypeof = function (variable) {
 const getRollbackMessage = function (price) {
   if (price >= 30000) {
     return "Даем скидку в 10%";
-  } else if (price >= 15000 || price < 30000) {
+  } else if (price >= 15000 && price < 30000) {
     return "Даем скидку в 5%";
-  } else if (price >= 0 || price < 15000) {
+  } else if (price >= 0 && price < 15000) {
     return "Скидка не предусмотрена";
   } else {
     return "Что то пошло не так";
