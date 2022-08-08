@@ -19,8 +19,6 @@ const appData = {
       "Декстоп"
     );
 
-    appData.screenPrice = prompt("Сколько будет стоить данная работа?");
-
     do {
       appData.screenPrice = prompt("Сколько будет стоить данная работа?");
     } while (!appData.isNumber(appData.screenPrice));
@@ -100,7 +98,7 @@ const appData = {
       if (typeof appData[key] === "function") {
         console.log("key: ", key);
       } else {
-        console.log("key: ", key + " appData: ", appData[key]);
+        console.log("key: ", key);
       }
     }
     console.log(appData.title);
