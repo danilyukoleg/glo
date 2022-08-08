@@ -97,9 +97,16 @@ const appData = {
 
   logger: function () {
     for (let key in appData) {
-      console.log(`Свойства: ${key}
-    Методы: ${appData[key]}`);
+      if (typeof appData[key] === "function") {
+        console.log("key: ", key);
+      } else {
+        console.log("key: ", key + " appData: ", appData[key]);
+      }
     }
+    console.log(appData.title);
+    console.log(appData.screens.toLocaleLowerCase().split(", "));
+    console.log(appData.getRollbackMessage(appData.fullPrice));
+    console.log(appData.servicePercentPrice);
   },
 
   start: function () {
