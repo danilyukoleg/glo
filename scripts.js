@@ -101,10 +101,6 @@ const appData = {
         console.log("key: ", key);
       }
     }
-    console.log(appData.title);
-    console.log(appData.screens.toLocaleLowerCase().split(", "));
-    console.log(appData.getRollbackMessage(appData.fullPrice));
-    console.log(appData.servicePercentPrice);
   },
 
   start: function () {
