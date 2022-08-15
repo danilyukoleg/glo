@@ -49,4 +49,3 @@ getCreatElement();
 
 console.log(ulList);
 
-25;
